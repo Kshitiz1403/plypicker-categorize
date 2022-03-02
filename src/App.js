@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import { Link } from 'react-router-dom';
+
+export const SERVER_URL = "http://localhost:4000/api"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App-header">
+      <Link to={"/category"}>
+        Create category
+      </Link>
+      <Link to={"/subcategory"}>
+        Create subcategory
+      </Link>
+      <Link to={"/group"}>
+        Create group
+      </Link>
+      <Link to={"/subgroup"}>
+        Create subgroup
+      </Link>
+      <div>-------------------------</div>
+      <Link to={"/categorymap"}>
+        Get category map
+      </Link>
+      <Link to={"/subcategorymap"}>
+        Get subcategory map
+      </Link>
+      <Link to={"/groupmap"}>
+        Get group map
+      </Link>
+      <Link to={"/subgroupmap"}>
+        Get subgroup map
+      </Link>
+    
     </div>
   );
 }
