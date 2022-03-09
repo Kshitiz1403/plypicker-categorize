@@ -49,7 +49,7 @@ const SubGroups = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        create(name, selectedSubCategory, selectedCategory)
+        create(name, selectedGroup, selectedSubCategory, selectedCategory)
     }
 
     return (
