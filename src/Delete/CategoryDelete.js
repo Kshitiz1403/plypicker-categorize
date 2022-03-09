@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { SERVER_URL } from '../App'
+import './styles.css'
 
 const CategoryDelete = () => {
     const [categories, setCategories] = useState([])
@@ -43,20 +44,20 @@ const CategoryDelete = () => {
     const Item = ({ _id, name }) => {
         const [isDeleted, setIsDeleted] = useState(false)
         return (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div style={{ marginRight: 30 }}>{name}</div>
-                <div style={{ color: 'red', cursor: 'pointer' }} onClick={async () => {
+            <div className='container' >
+                <div className='name'>{name}</div>
+                <div className='delete' onClick={async () => {
                     await remove(_id)
                     setIsDeleted(true)
                 }}>Delete</div>
-                <div style={{ height: 25, width: 25, borderRadius: 50, marginLeft: 50, backgroundColor: isDeleted ? 'green' : 'red' }}></div>
+                <div className='status' style={{ backgroundColor: isDeleted ? 'green' : 'red' }}></div>
             </div>
         )
     }
 
     return (
         <div>
-            <div style={{ textAlign: 'center', marginBottom: 50 }}>
+            <div className='heading'>
                 Category
             </div>
             <div>{categories.map(subCat => <Item key={subCat._id} _id={subCat._id} name={subCat.name} />)}

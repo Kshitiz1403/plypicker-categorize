@@ -1,0 +1,28 @@
+.heading{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: large;
+    margin-top: 20px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.name{
+    margin-right: 30px;
+    min-width: 250px;
+}
+
+.delete{
+    color: red;
+    cursor: pointer;
+}
+
+.status{
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    margin-left: 50px;
+}
