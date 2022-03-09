@@ -11,19 +11,38 @@ import CategoryMap from './Map/CategoryMap';
 import SubCategoryMap from './Map/SubCategoryMap';
 import GroupMap from './Map/GroupMap';
 import SubGroupMap from './Map/SubGroupMap';
+import SubCategoryDelete from './Delete/SubCategoryDelete'
+import Upload from './Upload';
+import GroupDelete from './Delete/GroupDelete';
+import SubGroupDelete from './Delete/SubGroupDelete';
+import CategoryDelete from './Delete/CategoryDelete';
+
 
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/category" element={<Categories />} />
-      <Route path="/subcategory" element={<SubCategories />} />
-      <Route path="/group" element={<Groups />} />
-      <Route path="/subgroup" element={<SubGroups />} />
-      <Route path="/categorymap" element={<CategoryMap />} />
-      <Route path="/subcategorymap" element={<SubCategoryMap />} />
-      <Route path="/groupmap" element={<GroupMap />} />
-      <Route path="/subgroupmap" element={<SubGroupMap />} />
+      <Route path='/create'>
+        <Route path="category" element={<Categories />} />
+        <Route path="subcategory" element={<SubCategories />} />
+        <Route path="group" element={<Groups />} />
+        <Route path="subgroup" element={<SubGroups />} />
+      </Route>
+
+      <Route path='/map'>
+        <Route path="category" element={<CategoryMap />} />
+        <Route path="subcategory" element={<SubCategoryMap />} />
+        <Route path="group" element={<GroupMap />} />
+        <Route path="subgroup" element={<SubGroupMap />} />
+      </Route>
+
+      <Route path='/delete'>
+        <Route path='category' element={<CategoryDelete />} />
+        <Route path='subcategory' element={<SubCategoryDelete />} />
+        <Route path='group' element={<GroupDelete />} />
+        <Route path='subgroup' element={<SubGroupDelete />} />
+      </Route>
+      {/* <Route path="/upload" element={<Upload />} /> */}
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')
